@@ -8,6 +8,9 @@ sets = 0.0
 player1 = 'Zak'      #Same for these variables, they will be a user input in the main code
 player2 = 'Rocco'
 
+p1violations = 0
+p2violations = 0
+
 import random
 
 
@@ -22,8 +25,11 @@ def coinFlip():
 def codeViolation(player, violation, side):
     str(violation) #Player is going to have to be a variable created in MainKeeper to keep track of how many violations.
     str(side)
+    global score
+    global games
+    global sets
     if player == 0:                           #e.g. p1violations or p2violations
-        player + 1
+        player += 1
         if side == 'right':
             print("Code violation ", violation, ", warning, ", player1)
         if side == 'left':
@@ -248,6 +254,9 @@ def codeViolation(player, violation, side):
             print('Game, Set, and Match ', player1)
             quit()
 def addPoint(side):
+    global score
+    global games
+    global sets
     if side == 'right':
         if score == 0.0:
             score = 0.15
